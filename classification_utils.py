@@ -109,30 +109,7 @@ def update_labels(labels_dict):
         
     return labels_dict
    
-#   sample_from = set(labels_dict.values())
-    
-#    class_map = {}
-#    used = []
-#    for c in unique:    
-#        if c in sample_from:        
-#            sample_from.remove(c)    
-#        new_class = random.sample(sample_from, 1)[0]
-#        used.append(new_class)
-#        class_map[c] = new_class
-#        sample_from.remove(new_class)
-#        if c not in used:
-#            sample_from.add(c)
-#            
-#    df_labels = pd.DataFrame.from_dict(labels_dict, orient='index')
-#    df_labels = df_labels.reset_index()
-#    df_labels = df_labels.rename(columns = {'index':'tab_id', 0:'class'})
-    #
-#    for i, row in df_labels.iterrows():              
-#        df_labels.at[i,'new_class'] = class_map[row['class']]
-    
-#    new_labels_dict = dict(zip(df_labels.tab_id, df_labels.new_class) )
-    
-#    return new_labels_dict, class_map
+
 def check_max_leng(df):
     
     df_values = df.values.tolist()
@@ -450,46 +427,6 @@ def sample_rows(dataframes, k=3):
         sampled_dfs.append(sampled)
 
     return sampled_dfs
-
-
-# def spacy_table(dataframe):
-#     all_tables = []
-#     for df in dataframe:
-#         df.fillna('', inplace=True)
-#         # df.replace(to_replace=[r"\\t|\\n|\\r", "\t|\n|\r"], value=["",""], regex=True, inplace = True)
-#         table = []
-#         for i in range(len(df)):
-#             l = [str(x) for x in df.iloc[i, :]]
-#             s = ",".join(l)
-#             vec = nlp(s).vector
-#             table.append(vec)
-#
-#         table_vec = torch.tensor(table)
-#         table_vec = torch.mean(table_vec, dim=0)  # mean over all the rows
-#         table_vec = table_vec.detach().numpy()
-#
-#         all_tables.append(table_vec)
-#
-#     return all_tables
-
-# def spacy_string(strings_table, oov=True):
-#     """
-#     Embed table as a string with spacy. Input is list of strings and flag for Out Of Vocabulary (oov) handling.
-#     If oov = True - embed only tokens which are in the vocabulary"""
-#
-#     embed = []
-#     for string in strings_table:
-#         # print(string)
-#         # print(len(string))
-#         if oov == False:
-#             encode = nlp(string).vector
-#         else:
-#             clean = " ".join([token.text for token in nlp(string) if token.has_vector])
-#             encode = nlp(clean).vector
-#
-#         embed.append(encode)
-#
-#     return embed
 
 def table_to_string(sampled_dfs):
 
