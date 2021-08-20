@@ -1,5 +1,3 @@
-__author__ = 'aneta.koleva'
-
 import numpy as np
 import glob
 from table_bert import TableBertModel, Table, Column
