@@ -1,5 +1,3 @@
-__author__ = 'aneta.koleva'
-
 from utils.classification_utils import *
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
