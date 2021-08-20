@@ -1,5 +1,3 @@
-__author__ = 'aneta.koleva'
-
 import torch
 import pandas as pd
 import numpy as np
