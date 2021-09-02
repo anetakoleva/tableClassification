@@ -28,9 +28,4 @@ pip install pytorch_pretrained_bert
 from pytorch_pretrained_bert import import BertTokenizer, BertForMaskedLM
 ```
 
-The files conf_mtx_tabert.pdf and conf_mtx_w2vec.pdf show the confusion matrices which are presented in the paper, in their original size. 
-
-
-
-
-
+The files [conf_mtx_tabert.pdf](https://github.com/anonymUsername11/tableClassification/blob/main/conf_mtx_tabert.pdf) and [conf_mtx_w2vec.pdf](https://github.com/anonymUsername11/tableClassification/blob/main/conf_mtx_w2vec.pdf) show the confusion matrices which are presented in the paper, in their original size. 
